@@ -14,7 +14,7 @@ env:
 jobs:
   create-nightly-release:
     name: Create Nightly Release
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     outputs:
       is_active: ${{ steps.activity.outputs.is_active }}
       date: ${{ steps.current_time_underscores.outputs.formattedTime }}
@@ -98,10 +98,10 @@ jobs:
       matrix:
         include:
           - build_name: linux-x86_64
-            os: ubuntu-24.04
+            os: ubuntu-22.04
 
           - build_name: linux-aarch64
-            os: ubuntu-24.04-arm
+            os: ubuntu-22.04-arm
 
           # Mac does two Rust builds to make a universal binary
           - build_name: macos-x86_64
